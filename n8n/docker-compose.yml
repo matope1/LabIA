@@ -1,0 +1,20 @@
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678" 
+    environment:
+      - N8N_SECURE_COOKIE=false     #Quitar cuando se instale HTTPS
+    volumes:
+      - n8n_data:/home/node/.n8n
+    networks:
+      server:                        #Red compartida entre todos los contenedores
+        ipv4_address: 172.21.0.101   #Red de docker
+volumes:
+  n8n_data:
+
+networks:
+  server:
+    external: true

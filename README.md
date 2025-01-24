@@ -10,16 +10,25 @@ Laboratorio IA - Aplicaciones para desarrollo de automatizaciones y herramientas
 ```
 chmod +x createnet.sh
 ```
-
 ```
 sh createnet.sh
 ```
 
 - Por comando directamente:
-
+  
 ```
 docker network create \
 --driver=bridge \
 --subnet=172.50.0.0/16 \
 server
+```
+
+## Levantar contenedores
+
+```
+cd LabIA
+cd n8n
+```
+```
+docker compose up -d
 ```

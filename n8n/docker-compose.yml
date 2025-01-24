@@ -11,7 +11,8 @@ services:
       - n8n_data:/home/node/.n8n
     networks:
       server:                        #Red compartida entre todos los contenedores
-        ipv4_address: 172.21.0.101   #Red de docker
+        ipv4_address: 172.50.0.2     #Red de docker
+
 volumes:
   n8n_data:
 

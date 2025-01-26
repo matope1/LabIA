@@ -1,0 +1,26 @@
+services:
+  evolution-api:
+    container_name: evolution-api-v2
+    image: atendai/evolution-api:v2.1.0
+    ports:
+      - 8080:8080
+    networks:
+      server:
+        ipv4_address: 172.50.0.10
+    env_file:
+      - .env
+    volumes:
+      - evolution_instances:/evolution/instances
+      - evolution_store:/evolution/store
+    expose:
+      - 8080
+
+volumes:
+  evolution_instances:
+    name: evolution_instances
+  evolution_store:
+    name: evolution_store
+
+networks:
+  server:
+    external: true
